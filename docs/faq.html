@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Robotic Core School</title>
+    <meta name="description" content="Frequently Asked Questions about Robotic Core School">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <svg width="40" height="40" viewBox="0 0 100 100" style="vertical-align: middle; margin-right: 10px;">
+                    <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5"
+                             fill="#667eea" stroke="#764ba2" stroke-width="3"/>
+                    <text x="50" y="58" font-family="Arial, sans-serif" font-size="28"
+                          font-weight="bold" fill="white" text-anchor="middle">RCS</text>
+                </svg>
+                <h1 style="display: inline-block; vertical-align: middle;">Robotic Core School</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="download.html">Download</a></li>
+                <li><a href="faq.html" class="active">FAQ</a></li>
+                <li><a href="https://github.com/rcs-robo/edubots/wiki" target="_blank">Wiki</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="content-page">
+        <div class="container">
+            <h1>Frequently Asked Questions</h1>
+
+            <h2>General Questions</h2>
+
+            <div class="download-option">
+                <h3>What is Robotic Core School?</h3>
+                <p>Robotic Core School (RCS) is an educational robotics platform that enables students to learn programming through block-based coding with physical robots. It's built on OpenRoberta technology and supports multiple robot platforms including NanoDiffBot, Arduino, and mBot.</p>
+            </div>
+
+            <div class="download-option">
+                <h3>Is it free to use?</h3>
+                <p>Yes! Robotic Core School is completely free and open source. You can use it for educational purposes, modify it, and contribute to its development.</p>
+            </div>
+
+            <div class="download-option">
+                <h3>What age group is this suitable for?</h3>
+                <p>RCS is designed for students ages 8 and up. The block-based programming interface makes it accessible for beginners, while advanced features support more experienced students.</p>
+            </div>
+
+            <div class="download-option">
+                <h3>Do I need programming experience?</h3>
+                <p>No programming experience is required! The drag-and-drop block interface makes it easy to start creating programs immediately. As you progress, you can learn programming concepts naturally.</p>
+            </div>
+
+            <h2>Getting Started</h2>
+
+            <div class="download-option">
+                <h3>What do I need to get started?</h3>
+                <p>You need:</p>
+                <ul>
+                    <li>A computer (Windows, Mac, or Linux)</li>
+                    <li>An internet connection (for initial setup)</li>
+                    <li>A compatible robot (NanoDiffBot, Arduino, or mBot)</li>
+                    <li>RCS Connector (download from our <a href="download.html">Download page</a>)</li>
+                </ul>
+            </div>
+
+            <div class="download-option">
+                <h3>How do I install the software?</h3>
+                <p>Visit our <a href="download.html">Download page</a> to get the RCS Connector for your operating system. For detailed instructions, check the <a href="https://github.com/rcs-robo/edubots/wiki">Wiki</a>.</p>
+            </div>
+
+            <div class="download-option">
+                <h3>Can I use it offline?</h3>
+                <p>Yes! Once you've set up the platform, you can program robots offline. You only need internet for initial setup and updates.</p>
+            </div>
+
+            <h2>Robots & Hardware</h2>
+
+            <div class="download-option">
+                <h3>Which robots are supported?</h3>
+                <p>RCS supports:</p>
+                <ul>
+                    <li><strong>NanoDiffBot</strong> - Arduino Nano differential drive robot</li>
+                    <li><strong>Arduino Boards</strong> - Nano, Uno, and Mega</li>
+                    <li><strong>mBot & mBot2</strong> - Makeblock educational robots</li>
+                </ul>
+            </div>
+
+            <div class="download-option">
+                <h3>Where can I buy a NanoDiffBot?</h3>
+                <p>NanoDiffBot is an open-source robot design. You can either purchase a kit from educational robotics suppliers or build one yourself using the assembly guide in our <a href="https://github.com/rcs-robo/edubots/wiki">Wiki</a>.</p>
+            </div>
+
+            <div class="download-option">
+                <h3>Can I use my Arduino Uno?</h3>
+                <p>Yes! RCS supports Arduino Uno, Nano, and Mega boards. You can program them directly using our platform.</p>
+            </div>
+
+            <div class="download-option">
+                <h3>Do I need special cables?</h3>
+                <p>You need a standard USB cable to connect your robot to the computer. Most robots use USB Type-A to Mini-USB or Micro-USB cables.</p>
+            </div>
+
+            <h2>Technical Questions</h2>
+
+            <div class="download-option">
+                <h3>My robot isn't detected. What should I do?</h3>
+                <p>Try these steps:</p>
+                <ol>
+                    <li>Make sure the RCS Connector is running</li>
+                    <li>Check that the USB cable is properly connected</li>
+                    <li>Install USB drivers (especially CH340 for Arduino clones)</li>
+                    <li>Try a different USB port or cable</li>
+                    <li>Check our <a href="https://github.com/rcs-robo/edubots/wiki">Wiki</a> for detailed troubleshooting</li>
+                </ol>
+            </div>
+
+            <div class="download-option">
+                <h3>What programming language does it use?</h3>
+                <p>RCS uses block-based visual programming (similar to Scratch). Behind the scenes, it generates Arduino C++ code for Arduino-based robots and MicroPython for mBot2.</p>
+            </div>
+
+            <div class="download-option">
+                <h3>Can I see the generated code?</h3>
+                <p>Yes! You can view the generated code in the platform, which is helpful for learning how block programming translates to actual code.</p>
+            </div>
+
+            <div class="download-option">
+                <h3>Does it work on Chromebook?</h3>
+                <p>RCS is web-based and can be accessed from a Chromebook browser. However, the RCS Connector (needed for USB connection) requires Windows, Mac, or Linux.</p>
+            </div>
+
+            <h2>Classroom Use</h2>
+
+            <div class="download-option">
+                <h3>Can I use this in my classroom?</h3>
+                <p>Absolutely! RCS is designed for educational use. We provide lesson plans, activities, and teacher resources. Check the <a href="download.html">Download page</a> for teacher materials.</p>
+            </div>
+
+            <div class="download-option">
+                <h3>How many students can use it at once?</h3>
+                <p>Multiple students can connect to the same RCS server. Each student can work on their own program and upload to their robot independently.</p>
+            </div>
+
+            <div class="download-option">
+                <h3>Are there lesson plans available?</h3>
+                <p>Yes! Download our Teacher Resources PDF from the <a href="download.html">Download page</a> for complete lesson plans, activities, and assessment ideas.</p>
+            </div>
+
+            <h2>Support & Community</h2>
+
+            <div class="download-option">
+                <h3>Where can I get help?</h3>
+                <p>Resources for help:</p>
+                <ul>
+                    <li><a href="https://github.com/rcs-robo/edubots/wiki">Wiki</a> - Comprehensive documentation</li>
+                    <li><a href="https://github.com/rcs-robo/edubots/issues">GitHub Issues</a> - Report bugs or ask questions</li>
+                    <li>Community forums (check our Wiki for links)</li>
+                </ul>
+            </div>
+
+            <div class="download-option">
+                <h3>How can I contribute?</h3>
+                <p>We welcome contributions! You can:</p>
+                <ul>
+                    <li>Report bugs or suggest features on GitHub</li>
+                    <li>Contribute code or documentation</li>
+                    <li>Share lesson plans and projects</li>
+                    <li>Help translate to other languages</li>
+                </ul>
+            </div>
+
+            <div class="download-option">
+                <h3>Is there a user manual?</h3>
+                <p>Yes! Download the User Guide PDF from our <a href="download.html">Download page</a>, or visit the <a href="https://github.com/rcs-robo/edubots/wiki">Wiki</a> for online documentation.</p>
+            </div>
+
+            <div class="info-box" style="margin-top: 2rem;">
+                <strong>Still have questions?</strong> Visit our <a href="https://github.com/rcs-robo/edubots/wiki" style="color: var(--primary-color); font-weight: 600;">Wiki</a> or ask on <a href="https://github.com/rcs-robo/edubots/issues" style="color: var(--primary-color); font-weight: 600;">GitHub</a>.
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Robotic Core School. Open source educational robotics platform.</p>
+            <p>
+                <a href="https://github.com/rcs-robo/edubots/wiki">Wiki</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
