@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help - EduBots Documentation</title>
+    <meta name="description" content="EduBots help and documentation">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>🤖 EduBots</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="help.html" class="active">Help</a></li>
+                <li><a href="download.html">Download</a></li>
+                <li><a href="https://github.com/rcs-robo/edubots/wiki" target="_blank">Wiki</a></li>
+                <li><a href="https://github.com/rcs-robo/edubots" target="_blank">GitHub</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="content-page">
+        <div class="container">
+            <h1>Help & Documentation</h1>
+
+            <div class="info-box">
+                <strong>📚 Need more detailed tutorials?</strong> Check out our comprehensive
+                <a href="https://github.com/rcs-robo/edubots/wiki" style="color: var(--primary-color); font-weight: 600;">Wiki documentation</a>
+            </div>
+
+            <h2>Getting Started</h2>
+            <p>EduBots is a web-based block programming platform designed for educational robotics. Follow these steps to get started:</p>
+
+            <h3>1. Installation</h3>
+            <p>You can run EduBots using Docker or as a standalone application:</p>
+
+            <h4>Using Docker (Recommended)</h4>
+            <pre><code># Pull the Docker image
+docker pull openroberta/lab
+
+# Run the container
+docker run -d --name edubot -p 1999:1999 openroberta/lab
+
+# Access at http://localhost:1999</code></pre>
+
+            <h4>Local Installation</h4>
+            <p>See the <a href="download.html">Download page</a> for installation packages.</p>
+
+            <h3>2. Connecting Your Robot</h3>
+            <p>To program your robot, you need to:</p>
+            <ol>
+                <li>Connect your robot to your computer via USB</li>
+                <li>Download and run the <strong>OpenRoberta Connector</strong></li>
+                <li>In the web interface, click the "Connect" button</li>
+                <li>Select your robot type from the dropdown menu</li>
+            </ol>
+
+            <div class="info-box">
+                <strong>OpenRoberta Connector:</strong> This is a Java application that enables communication
+                between the web browser and your USB-connected robot. Download it from the
+                <a href="download.html" style="color: var(--primary-color); font-weight: 600;">Download page</a>.
+            </div>
+
+            <h3>3. Creating Your First Program</h3>
+            <ol>
+                <li>Select your robot from the robot menu (e.g., NanoDiffBot, mBot, Arduino Nano)</li>
+                <li>Drag blocks from the toolbox on the left</li>
+                <li>Connect blocks to create your program</li>
+                <li>Click "Run" to compile and upload to your robot</li>
+            </ol>
+
+            <h2>Supported Robots</h2>
+
+            <h3>NanoDiffBot</h3>
+            <p>Arduino Nano-based differential drive robot with the following features:</p>
+            <ul>
+                <li><strong>Motors:</strong> L298N motor driver controlling two DC motors</li>
+                <li><strong>Sensors:</strong> Ultrasonic distance sensor, light sensor, line following sensors</li>
+                <li><strong>Actuators:</strong> RGB LED, buzzer</li>
+                <li><strong>Input:</strong> IR receiver for remote control</li>
+            </ul>
+
+            <h4>NanoDiffBot Pin Configuration</h4>
+            <pre><code>Left Motor:  PWM=5, DIR1=7, DIR2=8
+Right Motor: PWM=11, DIR1=12, DIR2=A4
+Ultrasonic:  TRIG=4, ECHO=2
+Light Sensor: A0
+Line Sensors: LEFT=A1, RIGHT=A2
+Buzzer: Pin 9
+IR Receiver: Pin 10
+RGB LED: RED=3, GREEN=6, BLUE=A3</code></pre>
+
+            <h3>Arduino Boards</h3>
+            <p>Direct support for programming Arduino Nano, Uno, and Mega boards with standard Arduino blocks.</p>
+
+            <h3>mBot & mBot2</h3>
+            <p>Makeblock educational robots with built-in sensors, motors, and MicroPython support (mBot2/CyberPi uses ESP32).</p>
+
+            <h2>Troubleshooting</h2>
+
+            <h3>Robot Not Detected</h3>
+            <div class="warning-box">
+                <p><strong>Problem:</strong> Robot is not showing up in the connection dialog</p>
+                <p><strong>Solutions:</strong></p>
+                <ul>
+                    <li>Make sure the OpenRoberta Connector is running</li>
+                    <li>Check USB cable connection</li>
+                    <li>Install USB drivers for your robot (CH340 for Arduino Nano clones)</li>
+                    <li>Try a different USB port or cable</li>
+                    <li>Check Device Manager (Windows) or <code>ls /dev/tty*</code> (Mac/Linux) to verify the device is detected</li>
+                </ul>
+            </div>
+
+            <h3>Compilation Errors</h3>
+            <div class="warning-box">
+                <p><strong>Problem:</strong> Program won't compile or upload</p>
+                <p><strong>Solutions:</strong></p>
+                <ul>
+                    <li>Check that you selected the correct robot type</li>
+                    <li>Verify all blocks are properly connected (no red error indicators)</li>
+                    <li>Make sure the robot is not running another program (press reset button)</li>
+                    <li>Check the console for specific error messages</li>
+                </ul>
+            </div>
+
+            <h3>Docker Issues</h3>
+            <div class="warning-box">
+                <p><strong>Problem:</strong> Docker container won't start or is slow</p>
+                <p><strong>Solutions:</strong></p>
+                <ul>
+                    <li><strong>On Apple Silicon Macs:</strong> The AMD64 image runs under emulation, which may be slower</li>
+                    <li>Allocate more resources to Docker (Settings → Resources)</li>
+                    <li>Check Docker logs: <code>docker logs edubot</code></li>
+                    <li>Ensure port 1999 is not in use by another application</li>
+                </ul>
+            </div>
+
+            <h2>Block Programming Basics</h2>
+
+            <h3>Control Blocks</h3>
+            <ul>
+                <li><strong>Start:</strong> Every program begins with a start block</li>
+                <li><strong>Loop:</strong> Repeat actions multiple times or forever</li>
+                <li><strong>If/Else:</strong> Make decisions based on conditions</li>
+                <li><strong>Wait:</strong> Pause program execution</li>
+            </ul>
+
+            <h3>Motor Blocks</h3>
+            <ul>
+                <li><strong>Drive:</strong> Move forward or backward at a specific speed</li>
+                <li><strong>Turn:</strong> Rotate left or right</li>
+                <li><strong>Stop:</strong> Stop all motors</li>
+                <li><strong>Steer:</strong> Control left and right motors independently</li>
+            </ul>
+
+            <h3>Sensor Blocks</h3>
+            <ul>
+                <li><strong>Ultrasonic Distance:</strong> Measure distance in centimeters</li>
+                <li><strong>Light Sensor:</strong> Detect light levels</li>
+                <li><strong>Line Sensor:</strong> Detect black/white lines for line following</li>
+            </ul>
+
+            <h3>Output Blocks</h3>
+            <ul>
+                <li><strong>LED:</strong> Control RGB LED colors</li>
+                <li><strong>Buzzer:</strong> Play tones and melodies</li>
+            </ul>
+
+            <h2>Example Programs</h2>
+
+            <h3>Move Forward</h3>
+            <p>Simple program to move the robot forward for 2 seconds:</p>
+            <ol>
+                <li>Start block</li>
+                <li>Drive forward at speed 50</li>
+                <li>Wait 2000ms (2 seconds)</li>
+                <li>Stop motors</li>
+            </ol>
+
+            <h3>Obstacle Avoidance</h3>
+            <p>Robot stops when it detects an obstacle closer than 20cm:</p>
+            <ol>
+                <li>Start block</li>
+                <li>Forever loop</li>
+                <li>If ultrasonic distance < 20cm</li>
+                <li>Then: Stop motors and wait</li>
+                <li>Else: Drive forward at speed 50</li>
+            </ol>
+
+            <h3>Line Following</h3>
+            <p>Follow a black line on white surface:</p>
+            <ol>
+                <li>Start block</li>
+                <li>Forever loop</li>
+                <li>If both sensors on line: Drive forward</li>
+                <li>If left sensor on line: Turn left</li>
+                <li>If right sensor on line: Turn right</li>
+            </ol>
+
+            <div class="success-box">
+                <strong>💡 Pro Tip:</strong> Start with simple programs and gradually add complexity.
+                Test each new feature before adding more blocks!
+            </div>
+
+            <h2>Additional Resources</h2>
+            <ul>
+                <li><a href="https://github.com/rcs-robo/edubots/wiki">Wiki - Detailed Tutorials</a></li>
+                <li><a href="https://github.com/rcs-robo/edubots">GitHub Repository</a></li>
+                <li><a href="https://github.com/rcs-robo/edubots/issues">Report Issues</a></li>
+                <li><a href="download.html">Downloads</a></li>
+            </ul>
+
+            <h2>Contact & Support</h2>
+            <p>Need help? You can:</p>
+            <ul>
+                <li>Search the <a href="https://github.com/rcs-robo/edubots/wiki">Wiki</a> for tutorials and guides</li>
+                <li>Open an issue on <a href="https://github.com/rcs-robo/edubots/issues">GitHub</a></li>
+                <li>Check existing issues for similar problems</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 EduBots - Robotic Core School. Open source educational robotics platform.</p>
+            <p>
+                <a href="https://github.com/rcs-robo/edubots">GitHub</a> |
+                <a href="https://github.com/rcs-robo/edubots/wiki">Wiki</a> |
+                <a href="https://github.com/rcs-robo/edubots/issues">Issues</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

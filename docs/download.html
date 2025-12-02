@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download - EduBots</title>
+    <meta name="description" content="Download EduBots and OpenRoberta Connector">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>🤖 EduBots</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="help.html">Help</a></li>
+                <li><a href="download.html" class="active">Download</a></li>
+                <li><a href="https://github.com/rcs-robo/edubots/wiki" target="_blank">Wiki</a></li>
+                <li><a href="https://github.com/rcs-robo/edubots" target="_blank">GitHub</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="content-page">
+        <div class="container">
+            <h1>Download EduBots</h1>
+
+            <div class="info-box">
+                <strong>Quick Start:</strong> The easiest way to get started is with Docker.
+                Install Docker, then run the command below to start EduBots in minutes!
+            </div>
+
+            <h2>Docker Installation (Recommended)</h2>
+            <div class="download-section">
+                <h3>Prerequisites</h3>
+                <ul>
+                    <li>Docker Desktop installed (<a href="https://www.docker.com/products/docker-desktop" target="_blank">Download Docker</a>)</li>
+                    <li>At least 4GB RAM available</li>
+                    <li>Internet connection for first-time setup</li>
+                </ul>
+
+                <h3>Quick Start Command</h3>
+                <pre><code># Pull and run EduBots
+docker run -d --name edubot -p 1999:1999 openroberta/lab
+
+# Access the platform at:
+# http://localhost:1999</code></pre>
+
+                <div class="success-box">
+                    <strong>✅ That's it!</strong> Open your browser and navigate to <strong>http://localhost:1999</strong>
+                </div>
+
+                <h3>Useful Docker Commands</h3>
+                <pre><code># Stop the container
+docker stop edubot
+
+# Start the container
+docker start edubot
+
+# View logs
+docker logs edubot
+
+# Remove the container
+docker rm edubot
+
+# Pull latest version
+docker pull openroberta/lab</code></pre>
+            </div>
+
+            <h2>OpenRoberta Connector</h2>
+            <p>The OpenRoberta Connector is required to connect physical robots to the web interface via USB.</p>
+
+            <div class="download-options">
+                <div class="download-option">
+                    <h3>🖥️ Windows</h3>
+                    <p>Download and run the connector JAR file. Requires Java 11 or higher.</p>
+                    <ol>
+                        <li>Download <a href="https://github.com/OpenRoberta/openroberta-connector/releases" target="_blank">OpenRobertaConnector.jar</a></li>
+                        <li>Double-click to run, or use: <code>java -jar OpenRobertaConnector.jar</code></li>
+                        <li>Install <a href="https://www.java.com/download" target="_blank">Java</a> if not installed</li>
+                    </ol>
+                    <a href="https://github.com/OpenRoberta/openroberta-connector/releases" target="_blank" class="download-button">Download Connector</a>
+                </div>
+
+                <div class="download-option">
+                    <h3>🍎 macOS</h3>
+                    <p>Run the connector using Java from Terminal.</p>
+                    <ol>
+                        <li>Download <a href="https://github.com/OpenRoberta/openroberta-connector/releases" target="_blank">OpenRobertaConnector.jar</a></li>
+                        <li>Install Java: <code>brew install openjdk@17</code></li>
+                        <li>Run: <code>java -jar OpenRobertaConnector.jar</code></li>
+                    </ol>
+                    <a href="https://github.com/OpenRoberta/openroberta-connector/releases" target="_blank" class="download-button">Download Connector</a>
+                </div>
+
+                <div class="download-option">
+                    <h3>🐧 Linux</h3>
+                    <p>Run the connector from terminal with Java.</p>
+                    <ol>
+                        <li>Download <a href="https://github.com/OpenRoberta/openroberta-connector/releases" target="_blank">OpenRobertaConnector.jar</a></li>
+                        <li>Install Java: <code>sudo apt install openjdk-17-jre</code></li>
+                        <li>Run: <code>java -jar OpenRobertaConnector.jar</code></li>
+                        <li>Add user to dialout group: <code>sudo usermod -a -G dialout $USER</code></li>
+                    </ol>
+                    <a href="https://github.com/OpenRoberta/openroberta-connector/releases" target="_blank" class="download-button">Download Connector</a>
+                </div>
+            </div>
+
+            <h2>USB Drivers</h2>
+            <p>Some Arduino clones use CH340 USB chips that require driver installation:</p>
+
+            <div class="download-options">
+                <div class="download-option">
+                    <h3>Windows CH340 Driver</h3>
+                    <p>Required for Arduino Nano clones with CH340 USB chip.</p>
+                    <a href="https://sparks.gogo.co.nz/ch340.html" target="_blank" class="download-button">Download CH340 Driver</a>
+                </div>
+
+                <div class="download-option">
+                    <h3>macOS CH340 Driver</h3>
+                    <p>May be required for some Arduino clones on older macOS versions.</p>
+                    <a href="https://github.com/adrianmihalko/ch340g-ch34g-ch34x-mac-os-x-driver" target="_blank" class="download-button">Download CH340 Driver</a>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <strong>⚠️ macOS Users:</strong> After installing CH340 drivers, you may need to:
+                <ol>
+                    <li>Go to System Preferences → Security & Privacy</li>
+                    <li>Click "Allow" for the driver</li>
+                    <li>Restart your Mac</li>
+                </ol>
+            </div>
+
+            <h2>Cloud Deployment</h2>
+            <p>You can deploy EduBots to cloud platforms for team or classroom access:</p>
+
+            <h3>Google Cloud Run</h3>
+            <pre><code># Tag and push to Google Container Registry
+docker tag openroberta/lab gcr.io/YOUR-PROJECT/edubot:latest
+docker push gcr.io/YOUR-PROJECT/edubot:latest
+
+# Deploy to Cloud Run
+gcloud run deploy edubot \
+  --image gcr.io/YOUR-PROJECT/edubot:latest \
+  --platform managed \
+  --region us-central1 \
+  --allow-unauthenticated \
+  --port 1999 \
+  --memory 2Gi</code></pre>
+
+            <h3>Other Platforms</h3>
+            <ul>
+                <li><strong>Heroku:</strong> Use the Docker deployment method</li>
+                <li><strong>AWS ECS:</strong> Deploy as a container service</li>
+                <li><strong>Azure Container Instances:</strong> Deploy from Docker Hub</li>
+                <li><strong>DigitalOcean App Platform:</strong> Deploy from GitHub</li>
+            </ul>
+
+            <h2>System Requirements</h2>
+
+            <h3>Server Requirements</h3>
+            <ul>
+                <li><strong>CPU:</strong> 2 cores minimum, 4 cores recommended</li>
+                <li><strong>RAM:</strong> 2GB minimum, 4GB recommended</li>
+                <li><strong>Storage:</strong> 2GB free space</li>
+                <li><strong>OS:</strong> Linux, macOS, or Windows with Docker</li>
+            </ul>
+
+            <h3>Client Requirements (Browser)</h3>
+            <ul>
+                <li><strong>Browser:</strong> Chrome, Firefox, Safari, or Edge (latest versions)</li>
+                <li><strong>JavaScript:</strong> Must be enabled</li>
+                <li><strong>Screen Resolution:</strong> 1024x768 minimum, 1920x1080 recommended</li>
+            </ul>
+
+            <h2>Source Code</h2>
+            <p>EduBots is open source! Build from source or contribute:</p>
+
+            <div class="download-option">
+                <h3>📦 GitHub Repository</h3>
+                <p>Clone the repository and build from source:</p>
+                <pre><code>git clone https://github.com/rcs-robo/edubots.git
+cd edubots
+
+# Build with Docker
+docker build -t openroberta/lab .
+
+# Or build with Maven
+mvn clean install</code></pre>
+                <a href="https://github.com/rcs-robo/edubots" target="_blank" class="download-button">View on GitHub</a>
+            </div>
+
+            <h2>Version History</h2>
+            <p>See the <a href="https://github.com/rcs-robo/edubots/releases" target="_blank">Releases page</a> on GitHub for version history and changelogs.</p>
+
+            <div class="info-box">
+                <strong>📢 Stay Updated:</strong> Watch the
+                <a href="https://github.com/rcs-robo/edubots" target="_blank" style="color: var(--primary-color); font-weight: 600;">GitHub repository</a>
+                to get notified of new releases and updates!
+            </div>
+
+            <h2>Need Help?</h2>
+            <p>After downloading:</p>
+            <ul>
+                <li>Check the <a href="help.html">Help & Documentation</a> page</li>
+                <li>Visit the <a href="https://github.com/rcs-robo/edubots/wiki" target="_blank">Wiki</a> for tutorials</li>
+                <li>Report issues on <a href="https://github.com/rcs-robo/edubots/issues" target="_blank">GitHub</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 EduBots - Robotic Core School. Open source educational robotics platform.</p>
+            <p>
+                <a href="https://github.com/rcs-robo/edubots">GitHub</a> |
+                <a href="https://github.com/rcs-robo/edubots/wiki">Wiki</a> |
+                <a href="https://github.com/rcs-robo/edubots/issues">Issues</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
