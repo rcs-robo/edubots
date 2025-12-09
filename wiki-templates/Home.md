@@ -18,10 +18,10 @@ EduBots is an educational robotics platform built on OpenRoberta technology, des
 2. [First Program Tutorial](First-Program)
 3. [Connecting Your Robot](Connecting-Your-Robot)
 
-### Supported Robots
+### Supported Robots and Boards
 - [NanoDiffBot](NanoDiffBot-Guide) - Arduino Nano differential drive robot
-- [Arduino Boards](Arduino-Guide) - Nano, Uno, Mega
-- [mBot & mBot2](mBot-Guide) - Makeblock educational robots
+- [AIbot](AIbot-Guide) - AI-enabled educational robot
+- [Arduino Boards](Arduino-Guide) - Nano, Uno, Mega, and other Arduino boards
 
 ## Tutorials
 
@@ -80,7 +80,7 @@ EduBots is an educational robotics platform built on OpenRoberta technology, des
 ## FAQ
 
 **Q: What robots are supported?**
-A: NanoDiffBot, Arduino Nano/Uno/Mega, mBot, and mBot2.
+A: NanoDiffBot, AIbot, and other Arduino boards (Nano, Uno, Mega).
 
 **Q: Do I need to install software?**
 A: Just Docker for the server, and the OpenRoberta Connector for USB communication.
